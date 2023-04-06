@@ -1,0 +1,8 @@
+<h1><%= @item.name %></h1>
+
+<p><%= @item.description %></p>
+
+<p><strong>Price:</strong> $<%= @item.price %></p>
+
+<%= link_to 'Edit Item', edit_menu_item_path(@menu, @item) %>
+<%= link_to 'Delete Item', [@menu, @item], method: :delete, data: { confirm: 'Are you sure?' } %>

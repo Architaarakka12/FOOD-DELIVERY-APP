@@ -1,0 +1,23 @@
+<h1>Order Details</h1>
+
+<p><strong>Name:</strong> <%= @order.name %></p>
+
+<p><strong>Address:</strong> <%= @order.address %></p>
+
+<p><strong>Phone:</strong> <%= @order.phone %></p>
+
+<p><strong>Total:</strong> $<%= @order.total %></p>
+
+<p><strong>Status:</strong> <%= @order.status %></p>
+
+<%= link_to 'Edit Order', edit_menu_order_path(@menu, @order) %>
+<%= link_to 'Delete Order', [@menu, @order], method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<h2>Order Items</h2>
+<ul>
+  <% @order.items.each do |item| %>
+    <li>
+      <%= item.name %> ($<%= item.price %>)
+    </li>
+  <% end %>
+</ul>

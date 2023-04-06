@@ -1,0 +1,14 @@
+<h1>New Order</h1>
+
+<%= form_with(model: [@menu, @order], local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :address %>
+  <%= form.text_area :address %>
+
+  <%= form.label :phone %>
+  <%= form.text_field :phone %>
+
+  <%= form.submit %>
+<% end %>
